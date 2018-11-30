@@ -6,9 +6,9 @@ var brgr = {
             qryres(res);
         });
     },
-    create: function(flds,vls,qryres){
-        orm.create("burgers",flds,vls,qryres, function(res){
-            qryres(res);
+    create: function(flds,vals,qryres){
+        orm.create("burgers",flds,vals,function(res){
+            qryres(res) 
         });
     },
     update: function(flds,cond,qryres){
