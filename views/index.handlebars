@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Eat Da burger App!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                {{#each burger_data}}
+                    {{#unless this.devoured}}
+                    <div class="col-md-9">
+                        <pre>{{this.id}}. {{this.burger_name}}</pre>
+                    </div>
+                    <div class="col-md-3">
+                        <form class="brgr_devour">
+                            <button type="submit" id={{this.id}} class="btn btn-default">Devour It!</button>
+                        </form>
+                    </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            {{#each burger_data}}
+                {{#if this.devoured}}
+                    <pre>{{this.id}}. {{this.burger_name}}</pre>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/burgers/create" method="POST">
+                <input type="text" class="form-control" name="burger_name" value="" id="burger_text">
+                <button type="submit" class="btn btn-primary" id="burger_button">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

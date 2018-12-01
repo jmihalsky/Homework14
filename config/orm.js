@@ -36,14 +36,14 @@ var orm = {
         });
     },
     create_burgers: function(tableInput,flds,vls,qryres){
-        var qrystrg = "insert into" + tableInput;
+        var qrystrg = "insert into " + tableInput;
 
         qrystrg += " (";
         qrystrg += flds.toString();
         qrystrg += ") ";
-        qrystrg += "values (";
-        qrystrg += printQuestionMarks(vls.length);
-        qrystrg += ") ";
+        qrystrg += "values ('";
+        qrystrg += vls;
+        qrystrg += "') ";
 
         console.log(qrystrg);
 
