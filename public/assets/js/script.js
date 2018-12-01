@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(".brgr_devour").on("submit", function(evt){
         evt.preventDefault();
 
-        var burger_id = $(this).attr("id");
+        var burger_id = $(this).children(".burger_id").val();
 
         $.ajax({
             method: "PUT",

@@ -57,12 +57,7 @@ var orm = {
         });
     },
     update_burgers: function(tableInput,flds,cond,qryres){
-        var qrystrg = "update " + tableInput;
-
-        qrystrg += " set ";
-        qrystrg += objToSql(flds);
-        qrystrg += " where ";
-        qrystrg += cond;
+        var qrystrg = "update " + tableInput + " set " + flds + " = true where id = " + cond;
 
         console.log(qrystrg);
 

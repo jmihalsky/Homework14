@@ -21,7 +21,7 @@ router.post("/burgers/create",function(req,res){
 });
 
 router.put("/burgers/:id", function(req,res){
-    brgr.update(req.params.id, function(result){
+    brgr.update("devoured",req.params.id, function(result){
         console.log(result);
         res.sendStatus(200);
     });
